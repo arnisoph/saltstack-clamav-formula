@@ -1,0 +1,11 @@
+{% load_yaml as rawmap %}
+Debian:
+  pkgs:
+    - clamav-daemon
+    - clamav-freshclam
+  daemon:
+    service: {}
+  freshclam:
+    service: {}
+  user: {}
+{% endload %}
