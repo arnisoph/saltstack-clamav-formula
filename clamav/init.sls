@@ -14,6 +14,8 @@ clamav:
     - present
     - name: {{ datamap.user.name|default('clamav') }}
     - optional_groups: {{ datamap.user.groups|default(['clamav']) }}
+    - require:
+      - pkg: clamav
 
 clamav_daemon:
   service:
