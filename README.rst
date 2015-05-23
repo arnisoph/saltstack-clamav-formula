@@ -1,74 +1,83 @@
-==============
-clamav-formula
-==============
+========================
+saltstack-clamav-formula
+========================
 
-Salt Stack Formula to set up and configure ClamAV, an antivirus engine designed for detecting Trojans, viruses, malware and other malicious threats
 
-NOTICE BEFORE YOU USE
----------------------
+.. image:: https://img.shields.io/badge/flattr-donate-red.svg
+    :alt: Donate via flattr
+    :target: https://flattr.com/profile/bechtoldt
 
-* This formula aims to follow the conventions and recommendations described at http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#conventions-formula and http://docs.saltstack.com/en/latest/topics/best_practices.html
+.. image:: https://img.shields.io/gratipay/bechtoldt.svg
+    :alt: Donate via Gratipay
+    :target: https://www.gratipay.com/bechtoldt/
 
-TODO
-----
+.. image:: https://img.shields.io/badge/license-Apache--2.0-blue.svg
+    :alt: Apache-2.0-licensed
+    :target: https://github.com/bechtoldt/saltstack-clamav-formula/blob/master/LICENSE
 
-None
+.. image:: https://img.shields.io/badge/gitter-chat-brightgreen.svg
+    :alt: Join Chat
+    :target: https://gitter.im/bechtoldt/saltstack-clamav-formula?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
+SaltStack Formula to set up and configure ClamAV, an antivirus engine designed for detecting Trojans, viruses, malware and other malicious threats
+
+.. contents::
+    :backlinks: none
+    :local:
+
 
 Instructions
 ------------
 
-1. Add this repository as a `GitFS <http://docs.saltstack.com/topics/tutorials/gitfs.html>`_ backend in your Salt master config.
+Please refer to https://github.com/bechtoldt/formula-docs to learn how to use
+this formula, how it is built and how you can add your changes.
 
-2. Configure your Pillar top file (``/srv/pillar/top.sls``) and your pillars, see pillar.example.sls
+**NOTICE:** This formula might uses the formhelper module which is a very useful Salt execution module that isn't available
+in upstream yet. Please consider retrieving it manually from https://github.com/bechtoldt/salt-modules and
+make it available to your Salt installation. Read `SaltStack documentation <http://docs.saltstack.com/en/latest/ref/modules/#modules-are-easy-to-write>`_ to
+see how this can be achieved.
 
-3. Include this Formula within another Formula or simply define your needed states within the Salt top file (``/srv/salt/top.sls``).
+Take a look at older `releases <https://github.com/bechtoldt/saltstack-clamav-formula/releases>`_ to get a version that isn't using the formhelper
+yet (if any).
 
-Available states
-----------------
 
-.. contents::
-    :local:
+Contributing
+------------
 
-``clamav``
-~~~~~~~~~~
-Setup and configure ClamAV
+Contributions are welcome! All development guidelines we ask you to follow can
+be found at https://github.com/bechtoldt/formula-docs.
 
-Additional resources
---------------------
+In general:
 
-None
+1. Fork this repo on Github
+2. Add changes, test them, update docs (README.rst) if possible
+3. Submit your pull request (PR) on Github, wait for feedback
 
-Templates
----------
+But it’s better to `file an issue <https://github.com/bechtoldt/saltstack-clamav-formula/issues/new>`_ with your idea first.
 
-Some states/ commands may refer to templates which aren't included in the files folder (``clamav/files``). Take a look at ``contrib/`` (if present) for e.g. template examples and place them in separate file roots (e.g. Git repository, refer to `GitFS <http://docs.saltstack.com/topics/tutorials/gitfs.html>`_) in your Salt master config.
 
-Formula Dependencies
---------------------
+Authors
+-------
 
-None
+* Arnold Bechtoldt <mail@arnoldbechtoldt.com>
 
-Contributions
+
+TODO
+----
+
+* add instructions how to use formhelper, add information about it in the formula-docs (dependency), show up alternative?
+* table/ matrix: os/salt compatibility (dedicated file)
+* add list of available states
+* add tests
+
+
+Miscellaneous
 -------------
 
-Contributions are always welcome. All development guidelines you have to know are
+Recommended formulas:
 
-* set a shebang in the first line (e.g. ``#!jinja|yaml``)
-* write clean code (proper YAML+Jinja syntax, no trailing whitespaces, no empty lines with whitespaces, LF only)
-* set sane default settings
-* test your code
-* update README.rst doc
+* SaltStack management: `saltstack-salt-formula <https://github.com/bechtoldt/saltstack-salt-formula>`_
 
-Salt Compatibility
-------------------
+Further reading:
 
-Tested with:
-
-* Salt Development Version (f9ec0bfb5a2c573785d55d02a01267e99848d333)
-
-OS Compatibility
-----------------
-
-Tested with:
-
-* GNU/ Linux Debian Wheezy
+* Documentation and Standardisation of SaltStack formulas: https://github.com/bechtoldt/formula-docs
