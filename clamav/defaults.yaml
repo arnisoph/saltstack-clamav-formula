@@ -8,4 +8,15 @@ Debian:
   freshclam:
     service: {}
   user: {}
+FreeBSD:
+  pkgs:
+    - clamav
+  daemon:
+    service: 
+      name: clamav-clamd
+  freshclam:
+    service: 
+      name: clamav-freshclam
+  user: 
+    groups: ['clamav','mail']
 {% endload %}
